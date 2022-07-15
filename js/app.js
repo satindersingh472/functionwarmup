@@ -1,26 +1,11 @@
-function run_string(string){
+function run_string(string) {
     return string;
-    console.log(string);
 }
 let any_string = run_string(`my name is satinder`);
 console.log(any_string);
 
-function accept_boolean(boolean){
-    if(boolean === true){
-        console.log(`happy`);
-        return boolean;
-    
-    } else{
-         console.log(`sad`);
-    }
-}
-let any_boolean = accept_boolean(true);
-console.log(any_boolean);
-any_boolean = accept_boolean(false);
-console.log(any_boolean);
-
-function accepts_numbers(num1,num2){
-    if (num1 > num2){
+function accepts_numbers(num1, num2) {
+    if (num1 > num2) {
         return num1;
     } else if (num2 > num1) {
         return num2;
@@ -31,15 +16,49 @@ console.log(numbers);
 numbers = accepts_numbers(1000, 500);
 console.log(numbers);
 
-function accepts_array(array){
-    let counter = 0;
-    while(counter < array.length){
-        if(array[counter].includes(`happy`)){
-            return array[counter];
+
+function accept_number_array(array) {
+    let num_counter = 0;
+    let largest = 0;
+    for (num_counter = 0; num_counter < array.length; num_counter++) {
+        if (array[num_counter] > largest) {
+            largest = array[num_counter];
         }
-        counter++ ;
+    }
+    return largest;
+
+}
+let array_numbers = [1, 3, 4, 6, 7, 4, 2];
+let accept = accept_number_array(array_numbers);
+console.log(accept);
+
+
+function accept_boolean(boolean) {
+    if (boolean === true) {
+        boolean = `happy`;
+
+    } else {
+        boolean = `sad`;
+    }
+    return boolean;
+}
+let any_boolean = accept_boolean(true);
+console.log(any_boolean);
+any_boolean = accept_boolean(false);
+console.log(any_boolean);
+
+
+
+function accepts_array(array) {
+    let counter = 0;
+    for (counter = 0; counter < array.length; counter++) {
+        let popup = array.pop();
+        let does_include = popup.includes(`happy`);
+        if(does_include === true){
+            return does_include[counter];
+        }
     }
 }
-let array1 = [`I am happy`,`You are sad`,`You are beautifull`,`I am living happy `];
-let array_to_give = accepts_array(array1);
-console.log(array_to_give); 
+let array_happy = [`i am a happy person`, `i am not a sad person`, `she is a healthy person`];
+let accepted_array = accepts_array(array_happy);
+console.log(accepted_array);
