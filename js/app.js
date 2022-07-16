@@ -51,11 +51,12 @@ console.log(any_boolean);
 
 function accepts_array(array) {
     let counter = 0;
+    let popup = array.pop();
     for (counter = 0; counter < array.length; counter++) {
-        let popup = array.pop();
+   
         let does_include = popup.includes(`happy`);
         if(does_include === true){
-            return does_include[counter];
+            return does_include;
         }
     }
 }
