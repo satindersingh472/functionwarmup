@@ -24,9 +24,8 @@ function accept_number_array(array) {
         if (array[num_counter] > largest) {
             largest = array[num_counter];
         }
-        return largest;
     }
-   
+    return largest;
 
 }
 let array_numbers = [-8, -3, -4, -6, -1, -4, -2];
