@@ -19,16 +19,17 @@ console.log(numbers);
 
 function accept_number_array(array) {
     let num_counter = 0;
-    let largest = 0;
+    let largest = array[num_counter];
     for (num_counter = 0; num_counter < array.length; num_counter++) {
         if (array[num_counter] > largest) {
             largest = array[num_counter];
         }
+        return largest;
     }
-    return largest;
+   
 
 }
-let array_numbers = [1, 3, 4, 6, 7, 4, 2];
+let array_numbers = [-8, -3, -4, -6, -1, -4, -2];
 let accept = accept_number_array(array_numbers);
 console.log(accept);
 
@@ -50,13 +51,12 @@ console.log(any_boolean);
 
 
 function accepts_array(array) {
-    let counter = 0;
-    let popup = array.pop();
-    for (counter = 0; counter < array.length; counter++) {
-   
+    let counter = array.length;
+    for (counter = array.length; counter > 0; counter--) {
+        let popup = array.pop();
         let does_include = popup.includes(`happy`);
         if(does_include === true){
-            return does_include;
+            return popup;
         }
     }
 }
